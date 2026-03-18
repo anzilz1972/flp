@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 忽略所有以 .log 结尾的文件
+*.log
+
+# 忽略特定文件夹
+logs/
+temp/
+build/
+dist/
+
+# 忽略系统文件（如 macOS 的 .DS_Store）
+.DS_Store
