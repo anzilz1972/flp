@@ -14,10 +14,24 @@ metro_areas = [
 ]
 
 def main():
-    print(f'{"":15} | {"latitude":>9} | {"longitude":>9}')
+    print(f'{"西半球城市":>10} | {"latitude":>9} | {"longitude":>9}')
+    ####嵌套拆包
     for name, _, _, (lat, lon) in metro_areas: 
         if lon <= 0: 
             print(f'{name:15} | {lat:9.4f} | {lon:9.4f}')
+    
+
+    print("\n====================\n")
+
+    ####使用序列模式匹配 match/case语法
+    print(f'{"东半球城市":>10} | {"latitude":>9} | {"longitude":>9}')
+    for record in metro_areas:
+        match record:
+            #列表、元组或多个变量都可以匹配任何序列，如下：
+            #case [str(name), *_, (float(lat), float(lon)) as coord] if lon >= 0:
+            #case str(name), *_, (float(lat), float(lon)) as coord if lon >= 0:
+            case (str(name), *_, (float(lat), float(lon)) as coord) if lon >= 0:
+                print(f'{name:15} | {lat:9.4f} | {lon:9.4f} | {coord}')
 
 if __name__ == '__main__':
     main()
