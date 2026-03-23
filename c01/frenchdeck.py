@@ -5,7 +5,6 @@
 ####第一章：示例 1-1
 ##########################################
 from collections import namedtuple
-from random import choice
 
 Card = namedtuple('Card',['rank','suit'])
 class FrenchDeck:
